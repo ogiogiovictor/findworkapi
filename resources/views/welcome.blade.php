@@ -69,7 +69,7 @@
                     
                     <tr>
                         <td>{url}/movie/search</td>
-                        <td>{ sort_param -(DESC | ASC ) , sort_by, (any_other parameters as you require e.g {name, height, mass etc..) }</td>
+                        <td>{ sort_param -(DESC | ASC ) , sort_by - (any parameters as you require e.g {name, height, mass etc..),  name (sort value) }</td>
                         <td>GET</td>
                         <td>Filter Movies</td>
                     </tr>
