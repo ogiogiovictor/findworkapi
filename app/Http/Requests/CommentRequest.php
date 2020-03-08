@@ -25,7 +25,8 @@ class CommentRequest extends FormRequest {
     public function rules() {
         return [
             'comment' => 'required',
-            'episode_id' => 'required'
+            'episode_id' => 'required',
+            'name' => 'required'
         ];
     }
 
