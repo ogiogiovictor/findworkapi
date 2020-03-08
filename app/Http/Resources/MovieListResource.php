@@ -15,7 +15,12 @@ class MovieListResource extends JsonResource
      */
     public function toArray($request)
     {
-       return [
+      
+       
+        return [
+            'title' => $request->title,
+        ];
+       /* return [
             'name' => $this->name,
             'height' => $this->height,
             'mass' => $this->mass,
@@ -28,5 +33,7 @@ class MovieListResource extends JsonResource
             'comment_id' => $this->comment_id,
         
         ];
+        * 
+        */
     }
 }

@@ -17,13 +17,21 @@ Route::group(['middleware' => ['forcejson']], function () {
     
     Route::group(['prefix' => 'movie'], function () {
 
-          //Create Movie Endpoint
-          Route::post('create', ['as' => 'create', 'uses' => 'MovieListController@createmovie']);
-          Route::post('comment', ['as' => 'comment', 'uses' => 'CommentController@addComment']);
-          Route::any('search', ['as' => 'search', 'uses' => 'MovieListController@search']);
+        // Reworked Endpoint
+         Route::get('getmovies', ['getmovies' => 'create', 'uses' => 'MovieListController@getmovies']);
+         Route::post('comment', ['as' => 'comment', 'uses' => 'CommentController@addComment']);
+         Route::get('comment', ['as' => 'comment', 'uses' => 'CommentController@allcomment']);
           
-          Route::get('showmovies', ['showmovies' => 'create', 'uses' => 'MovieListController@showmovies']);
-          Route::get('showmovies/{id}', ['showmovies.id' => 'create', 'uses' => 'MovieListController@showmovies']);
+          
+          
+          // OLD AND WRONG ENDPOINT
+          //Create Movie Endpoint
+         // Route::post('create', ['as' => 'create', 'uses' => 'MovieListController@createmovie']);
+         
+         // Route::any('search', ['as' => 'search', 'uses' => 'MovieListController@search']);
+          
+         // Route::get('showmovies', ['showmovies' => 'create', 'uses' => 'MovieListController@showmovies']);
+          //Route::get('showmovies/{id}', ['showmovies.id' => 'create', 'uses' => 'MovieListController@showmovies']);
           
           
     });

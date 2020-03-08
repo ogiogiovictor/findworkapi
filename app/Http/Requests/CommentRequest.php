@@ -24,26 +24,25 @@ class CommentRequest extends FormRequest {
      */
     public function rules() {
         return [
-            'name' => 'required',
             'comment' => 'required',
-            'movie_id' => 'required'
+            'episode_id' => 'required'
         ];
     }
 
     public function messages() {
         return [
-            'movie_id.required' => 'Please Select a Movie!, Just add a number to pass',
+            'episode_id.required' => 'Please Select a Movie!, Just add a number to pass',
         ];
     }
 
     public function handle() {
 
         try {
-          
+
             $createComment = comments::create([
-                        'name' => $this->name,
                         'comments' => $this->comment,
-                        'movie_id' => $this->movie_id,
+                        'name' => $this->name,
+                        'episode_id' => $this->episode_id,
                         'ip' => Request::ip(),
             ]);
         } catch (ModelNotFoundException $ex) {

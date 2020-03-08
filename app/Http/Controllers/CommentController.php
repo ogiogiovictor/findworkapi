@@ -21,4 +21,12 @@ class CommentController extends Controller
                ];
           return response()->json($json); 
     }
+    
+    public function allcomment(){
+        $json = [];
+        $allComment = \App\Comments::all();
+        $json = ['data' => $allComment];
+        
+        return response()->json($json); 
+    }
 }

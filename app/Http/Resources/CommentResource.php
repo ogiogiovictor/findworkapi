@@ -16,9 +16,9 @@ class CommentResource extends JsonResource
     public function toArray($request)
     {
         return [
+            'episode_id' => $this->episode_id,
             'name' => $this->name,
             'comments' => str_limit($this->comments, 500),
-            'movie_id' => $this->movie_id,
             'ip' => $this->ip,
             'created_at' => $this->created_at
             
